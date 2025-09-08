@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAgenda));
             lblContacto = new Label();
             lblTelefono = new Label();
             txtContacto = new TextBox();
@@ -44,7 +45,7 @@
             lblContacto.Location = new Point(50, 87);
             lblContacto.Name = "lblContacto";
             lblContacto.Size = new Size(59, 15);
-            lblContacto.TabIndex = 0;
+            lblContacto.TabIndex = 4;
             lblContacto.Text = "Contacto:";
             // 
             // lblTelefono
@@ -53,7 +54,7 @@
             lblTelefono.Location = new Point(50, 141);
             lblTelefono.Name = "lblTelefono";
             lblTelefono.Size = new Size(55, 15);
-            lblTelefono.TabIndex = 1;
+            lblTelefono.TabIndex = 5;
             lblTelefono.Text = "Telefono:";
             // 
             // txtContacto
@@ -61,10 +62,11 @@
             txtContacto.Location = new Point(115, 87);
             txtContacto.Name = "txtContacto";
             txtContacto.Size = new Size(199, 23);
-            txtContacto.TabIndex = 2;
+            txtContacto.TabIndex = 0;
             // 
             // lstContactos
             // 
+            lstContactos.BackColor = SystemColors.ScrollBar;
             lstContactos.FormattingEnabled = true;
             lstContactos.ItemHeight = 15;
             lstContactos.Location = new Point(50, 281);
@@ -77,17 +79,17 @@
             btnCancelar.Location = new Point(63, 206);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(114, 32);
-            btnCancelar.TabIndex = 5;
+            btnCancelar.TabIndex = 3;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
-            btnCancelar.Click += this.btnCancelar_Click;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // btnAgendar
             // 
             btnAgendar.Location = new Point(231, 206);
             btnAgendar.Name = "btnAgendar";
             btnAgendar.Size = new Size(114, 32);
-            btnAgendar.TabIndex = 6;
+            btnAgendar.TabIndex = 2;
             btnAgendar.Text = "Agendar";
             btnAgendar.UseVisualStyleBackColor = true;
             btnAgendar.Click += btnAgendar_Click;
@@ -105,10 +107,10 @@
             // msbTelefono
             // 
             msbTelefono.Location = new Point(115, 133);
-            msbTelefono.Mask = "(999)000-0000";
+            msbTelefono.Mask = "(99)0000-000000";
             msbTelefono.Name = "msbTelefono";
             msbTelefono.Size = new Size(199, 23);
-            msbTelefono.TabIndex = 8;
+            msbTelefono.TabIndex = 1;
             // 
             // frmAgenda
             // 
@@ -123,6 +125,7 @@
             Controls.Add(txtContacto);
             Controls.Add(lblTelefono);
             Controls.Add(lblContacto);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmAgenda";
             Text = "Form1";
             ResumeLayout(false);

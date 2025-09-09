@@ -53,7 +53,7 @@
             lblTelefono.AutoSize = true;
             lblTelefono.Location = new Point(50, 141);
             lblTelefono.Name = "lblTelefono";
-            lblTelefono.Size = new Size(55, 15);
+            lblTelefono.Size = new Size(56, 15);
             lblTelefono.TabIndex = 5;
             lblTelefono.Text = "Telefono:";
             // 
@@ -86,6 +86,7 @@
             // 
             // btnAgendar
             // 
+            btnAgendar.Enabled = false;
             btnAgendar.Location = new Point(231, 206);
             btnAgendar.Name = "btnAgendar";
             btnAgendar.Size = new Size(114, 32);
@@ -111,6 +112,7 @@
             msbTelefono.Name = "msbTelefono";
             msbTelefono.Size = new Size(199, 23);
             msbTelefono.TabIndex = 1;
+            msbTelefono.MaskInputRejected += msbTelefono_MaskInputRejected;
             // 
             // frmAgenda
             // 

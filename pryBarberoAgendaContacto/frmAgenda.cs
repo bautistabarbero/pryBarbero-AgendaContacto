@@ -4,6 +4,9 @@ namespace pryBarberoAgendaContacto
     {
         string vTelefono;
         string vContacto;
+        string[] vecTelefono = new string[5];
+        string[] vecContacto = new string[5];
+        int indice = 0;
         public frmAgenda()
         {
             InitializeComponent();
@@ -11,10 +14,10 @@ namespace pryBarberoAgendaContacto
 
         private void btnAgendar_Click(object sender, EventArgs e)
         {
-            vTelefono = msbTelefono.Text;
-            vContacto = txtContacto.Text;
+            vecTelefono[indice] = msbTelefono.Text;
+            vecContacto[indice] = txtContacto.Text;
 
-            lstContactos.Items.Add("Contacto: " + vContacto + " - Telefono: " + vTelefono);
+            lstContactos.Items.Add("Contacto: " + vecContacto[indice] + " - Telefono: " + vecTelefono[indice]);
 
             txtContacto.Text = "";
             msbTelefono.Text = "";
@@ -29,13 +32,13 @@ namespace pryBarberoAgendaContacto
 
         private void msbTelefono_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
-            if(msbTelefono.MaskFull)
+            if(msbTelefono.Text=="")
             {
-                btnAgendar.Enabled = true;
+                btnAgendar.Enabled = false;
             }
             else
             {
-                btnAgendar.Enabled = false;
+                btnAgendar.Enabled = true;
             }
         }
     }

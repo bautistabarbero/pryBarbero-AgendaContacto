@@ -37,12 +37,16 @@
             btnAgendar = new Button();
             lblTitulo = new Label();
             msbTelefono = new MaskedTextBox();
+            bntVerContactos = new Button();
+            btnLimpiar = new Button();
+            lblCantidad = new Label();
+            lblNumContact = new Label();
             SuspendLayout();
             // 
             // lblContacto
             // 
             lblContacto.AutoSize = true;
-            lblContacto.Location = new Point(50, 87);
+            lblContacto.Location = new Point(50, 68);
             lblContacto.Name = "lblContacto";
             lblContacto.Size = new Size(59, 15);
             lblContacto.TabIndex = 4;
@@ -51,7 +55,7 @@
             // lblTelefono
             // 
             lblTelefono.AutoSize = true;
-            lblTelefono.Location = new Point(50, 141);
+            lblTelefono.Location = new Point(50, 114);
             lblTelefono.Name = "lblTelefono";
             lblTelefono.Size = new Size(56, 15);
             lblTelefono.TabIndex = 5;
@@ -59,24 +63,25 @@
             // 
             // txtContacto
             // 
-            txtContacto.Location = new Point(115, 87);
+            txtContacto.Location = new Point(115, 65);
             txtContacto.Name = "txtContacto";
             txtContacto.Size = new Size(199, 23);
             txtContacto.TabIndex = 0;
+            txtContacto.TextChanged += txtContacto_TextChanged;
             // 
             // lstContactos
             // 
             lstContactos.BackColor = SystemColors.ScrollBar;
             lstContactos.FormattingEnabled = true;
             lstContactos.ItemHeight = 15;
-            lstContactos.Location = new Point(50, 281);
+            lstContactos.Location = new Point(79, 207);
             lstContactos.Name = "lstContactos";
-            lstContactos.Size = new Size(308, 169);
+            lstContactos.Size = new Size(235, 169);
             lstContactos.TabIndex = 4;
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(63, 206);
+            btnCancelar.Location = new Point(171, 153);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(114, 32);
             btnCancelar.TabIndex = 3;
@@ -87,7 +92,7 @@
             // btnAgendar
             // 
             btnAgendar.Enabled = false;
-            btnAgendar.Location = new Point(231, 206);
+            btnAgendar.Location = new Point(291, 153);
             btnAgendar.Name = "btnAgendar";
             btnAgendar.Size = new Size(114, 32);
             btnAgendar.TabIndex = 2;
@@ -107,18 +112,61 @@
             // 
             // msbTelefono
             // 
-            msbTelefono.Location = new Point(115, 133);
+            msbTelefono.Location = new Point(115, 111);
             msbTelefono.Mask = "(99)0000-000000";
             msbTelefono.Name = "msbTelefono";
             msbTelefono.Size = new Size(199, 23);
             msbTelefono.TabIndex = 1;
             msbTelefono.MaskInputRejected += msbTelefono_MaskInputRejected;
             // 
+            // bntVerContactos
+            // 
+            bntVerContactos.Enabled = false;
+            bntVerContactos.Location = new Point(250, 420);
+            bntVerContactos.Name = "bntVerContactos";
+            bntVerContactos.Size = new Size(131, 49);
+            bntVerContactos.TabIndex = 8;
+            bntVerContactos.Text = "Ver Contactos ";
+            bntVerContactos.UseVisualStyleBackColor = true;
+            bntVerContactos.Click += bntVerContactos_Click;
+            // 
+            // btnLimpiar
+            // 
+            btnLimpiar.Enabled = false;
+            btnLimpiar.Location = new Point(50, 437);
+            btnLimpiar.Name = "btnLimpiar";
+            btnLimpiar.Size = new Size(92, 32);
+            btnLimpiar.TabIndex = 9;
+            btnLimpiar.Text = "Limpiar";
+            btnLimpiar.UseVisualStyleBackColor = true;
+            btnLimpiar.Click += btnLimpiar_Click;
+            // 
+            // lblCantidad
+            // 
+            lblCantidad.AutoSize = true;
+            lblCantidad.Location = new Point(33, 407);
+            lblCantidad.Name = "lblCantidad";
+            lblCantidad.Size = new Size(129, 15);
+            lblCantidad.TabIndex = 10;
+            lblCantidad.Text = "Cantidad de contactos:";
+            // 
+            // lblNumContact
+            // 
+            lblNumContact.Location = new Point(168, 395);
+            lblNumContact.Name = "lblNumContact";
+            lblNumContact.Size = new Size(32, 27);
+            lblNumContact.TabIndex = 11;
+            lblNumContact.Click += lblNumContact_Click;
+            // 
             // frmAgenda
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(411, 481);
+            Controls.Add(lblNumContact);
+            Controls.Add(lblCantidad);
+            Controls.Add(btnLimpiar);
+            Controls.Add(bntVerContactos);
             Controls.Add(msbTelefono);
             Controls.Add(lblTitulo);
             Controls.Add(btnAgendar);
@@ -130,6 +178,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmAgenda";
             Text = "Form1";
+            Load += frmAgenda_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -144,5 +193,11 @@
         private Button btnAgendar;
         private Label lblTitulo;
         private MaskedTextBox msbTelefono;
+        private Button button1;
+        private Button button2;
+        private Button bntVerContactos;
+        private Button btnLimpiar;
+        private Label lblCantidad;
+        private Label lblNumContact;
     }
 }
